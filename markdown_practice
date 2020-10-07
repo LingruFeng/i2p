@@ -1,183 +1,233 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "<div style=\"float:left\">\n",
-    "            <h1 style=\"width:450px\">Practical 1: Getting Started</h1>\n",
-    "            <h2 style=\"width:450px\">Getting to grips with Jupyter, Git and Markdown</h2>\n",
-    "</div>\n",
-    "<div style=\"float:right\"><img width=\"100\" src=\"https://github.com/jreades/i2p/raw/master/img/casa_logo.jpg\" /></div>"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## Welcome!\n",
-    "\n",
-    "If you haven't already watched it, then please see the [_Welcome_ video](https://web.microsoftstream.com/video/f80fdbac-cba1-45b5-a170-407b0dca887c) that I recorded for you: it sets out how I approach the teaching of programming and how I think you can ensure that you both learn to code _and_ maximise your chances of getting a good mark in the course. \n",
-    "\n",
-    "And here's a _short_ introduction to Practical 1.\n",
-    "\n",
-    "[![Practical 1 Video](https://github.com/jreades/i2p/raw/master/practicals/img/Practical_1_Still.png)](https://web.microsoftstream.com/video/49b76b86-69df-4006-ba3d-c0fb4dbb3839)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## Task 1: Git and Version Control\n",
-    "\n",
-    "Understanding how to use Git and GitHub effectively is a core element of learning to code. So one of the _first_ things that we are going to do is set you up with an account and a new project.\n",
-    "\n",
-    "So in order to complete this task you need to:\n",
-    "1. Create a login with [GitHub](https://github.com). You may wish to set it up with your UCL email and then link a personal email address as well.\n",
-    "2. Create a new **private** project directly on GitHub. You might as well call it `i2p` since that's a lot shorter than `intro_to_programming_for_spatial_analysts`.\n",
-    "3. Edit the `README.md` file with some information about what's in the project (_e.g._ your notes and practicals for the module).\n",
-    "4. Save the changes (this is called a 'commit') and say in a general way what edits you did.\n",
-    "5. Work out how to compare the original and edited versions of `README.md` in your browser."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## Task 2: Getting Comfortable with Markdown\n",
-    "\n",
-    "To get some practice with Markdown let's write up some notes direclty in our GitHub repository (aka 'repo'). Here's a screenshot from GitHub of the [Markdown lecture](https://github.com/jreades/i2p/blob/master/lectures/1.3-Writing_Code.md).\n",
-    "\n",
-    "![Markdown Image](https://github.com/jreades/i2p/raw/master/practicals/img/Markdown.png)\n",
-    "\n",
-    "In order to complete this task you will need to:\n",
-    "\n",
-    "1. Select *one* of today's lectures by visiting [jreades/i2p/lectures](https://github.com/jreades/i2p/tree/master/lectures) and selecting one of the files starting `1.`\n",
-    "2. You will need to click on `Raw` to see the Markdown. \n",
-    "3. Select and copy all of the raw Markdown.\n",
-    "4. Go back to **your** repository and select `Add File > Create New File`, then paste in the copied text.\n",
-    "5. Once the file has been added successful, edit it by clicking on the 'pencil' icon. \n",
-    "\n",
-    "Add notes incorporating:\n",
-    "  - Plain text\n",
-    "  - Header levels: `#`, `##`, `###`, etc.\n",
-    "  - Emphasis/Italics: `_italics_`, `**bold**`.\n",
-    "  - Lists: `- ` and `1. `.\n",
-    "  - Links: `[link text](url)`.\n",
-    "  - Images: `![Alt text](url)`.\n",
-    "  - Code: \\``...`\\`.\n",
-    "  \n",
-    "Save your changes (don't forget to add a basic comment outlining what you've done) and then view the difference (aka 'History) to see what you've edited."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## Task 3: Installing Command Line Tools\n",
-    "\n",
-    "We need to install some basic tools that will allow us to interact with Git and other applications from the Terminal/Command Prompt. You only need to do one of these depending on your Operating System:\n",
-    "\n",
-    "1. **MacOS**: install the Xcode Command Line Tools [directly from the command line](https://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).\n",
-    "2. **Windows**: install Git Bash by following [these instructions](https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/). You may *also* find it helpful to install the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## Task 4: Organising Your Workspace\n",
-    "\n",
-    "Before we start trying to code, I'd suggest organising your 'workspace' on your computer so that it's easy to find/load data and Python notebooks. The easiest way to do this is work from your `Documents` folder and set up some directories there to hold your code and data. You should generally go with what makes sense to you, but leaving everything in the Downloads folder or in random places all over you computer is likely to be a disaster.\n",
-    "\n",
-    "Here's _one_ way of organising things, and I'm also taking the opportunity to show you how to do this using the Command Line:\n",
-    "\n",
-    "```bash\n",
-    "cd ~  # This will normally take you to your 'home' directory (on a Mac this is /Users/<your username>)\n",
-    "cd Documents # You're now *c*hanging *d*irectory to the Documents folder (e.g. /Users/<your username>/Documents)\n",
-    "mkdir CASA # *make* a *dir*ectory called `CASA`\n",
-    "mkdir CASA/modules # make a directory called `modules` under `CASA`\n",
-    "mkdir CASA/modules/i2p # make an intro to programming directory\n",
-    "```\n",
-    "If you follow this approach then below, when you download the Vagrantfile, you will need to move it from your `Downloads` folder to `~/Documents/CASA/` (which is the equivalent to `/Users/<your username>/Documents/CASA/`)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## Task 5: Getting Set Up with Vagrant or Anaconda Python\n",
-    "\n",
-    "You may be tempted to leave this for later, but we'd _strongly_ encourage you to try installing the programming environment as soon as possible so that we have as long as possible to help you over any hurdles before we get to week 3 where it will be essential that you are running the environment successfully. In our experience, the students who put off trying to get the environment running end up falling quickly behind as they are unable to complete basic tasks successfully. \n",
-    "\n",
-    "The _majority_ of you will be able to use the [Vagrant](https://www.vagrantup.com/)/[VirtualBox](https://www.virtualbox.org/) solution, but there will be _some_ Windows 10 users whose computers will refuse to run either VirtualBox or Vagrant, in which case will you need to run [Anaconda Python](https://anaconda.org/) directly.\n",
-    "\n",
-    "<div style=\"border: dotted 1px rgb(156,121,26); padding: 10px; margin: 5px; background-color: rgb(255,236,184); color: rgb(156,121,26)\"><i>Note</i>: There are any number of ways to organise your CASA work, what's important is that you put the Vagrantfile in the directory <i>above</i> where all of your <i>Introduction to Programming</i> notebooks are stored, and that you are <i>logical</i> about things like names and hierarchy. This will make it much easier to access files and notebooks using Vagrant <i>and</i> using Python.</div>\n",
-    "\n",
-    "### Installing Vagrant \n",
-    "\n",
-    "I have [produced an installation video](https://web.microsoftstream.com/video/d94bc09d-02c9-45cf-83ed-3badeab3568b) for users on Apple's MacOS that is available on MS Streams directly as well as from the Moodle Page.\n",
-    "\n",
-    "[![Installing Vagrant](https://github.com/jreades/i2p/raw/master/practicals/img/Vagrant_Mac.png)](https://web.microsoftstream.com/video/d94bc09d-02c9-45cf-83ed-3badeab3568b?list=studio)\n",
-    "\n",
-    "The process for Windows users will be similar. We are working on a video for this.\n",
-    "\n",
-    "You can **follow along** in a [text version of the installation guide on GitHub](https://github.com/jreades/sds_env/tree/master/vagrant).\n",
-    "\n",
-    "### Installing Anaconda Python\n",
-    "\n",
-    "If the installation of Vagrant/VirtualBox fails, then you will need to go down this route for installing the programming environment. \n",
-    "\n",
-    "You can **follow along** in a [text version of the installation guide on GitHub](https://github.com/jreades/sds_env/tree/master/conda).\n",
-    "\n",
-    "To run Anaconda Python you will want to launch the new `Anaconda Prompt` (which should now appear as a new 'app' in your Windows menu) and type the following:\n",
-    "\n",
-    "```bash\n",
-    "cd ~/Downloads/CASA\n",
-    "conda activate sds2020\n",
-    "jupyter lab\n",
-    "```\n",
-    "\n",
-    "That's 'it'! You're done. We've had to put a lot of pieces of software in place for the term, but you'll find these useful across multiple modules that are part of your MSc/MRes and you're now set up for the future!"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## Other Useful Resources\n",
-    "\n",
-    "- [GitHub Markdown Guide](https://guides.github.com/features/mastering-markdown/)\n",
-    "- [Common Mark](https://commonmark.org/help/)\n",
-    "- [Markdown Guide](https://www.markdownguide.org/basic-syntax/), which helpfully includes do's and don'ts.\n",
-    "\n",
-    "Finally, these are a bit overkill but the bits about setting up and installing `git`, `bash`/`zsh`, and so on may come in handy later:\n",
-    "- [Setting Up a New Mac](https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/)\n",
-    "- [Beginner's Guide to Setting Up Windows 10](https://medium.com/@mfosullivan/a-beginners-guide-to-setting-up-a-modern-web-development-environment-on-windows-10-4d75cd94cde8)\n",
-    "- [Setting up Windows without Linux](https://dev.to/jozsefsallai/how-i-ve-set-up-my-windows-machine-as-a-development-environment-without-wsl-2kcl)\n",
-    "- [Microsoft Python Setup Guide](https://docs.microsoft.com/en-us/windows/python/beginners)"
-   ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.7.8"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 4
-}
+Title: Writing Code
+Author: Jon Reades
+Theme: casa notes
+Palette: Purple
+Size: Wide
+---
+Layout: Title
+# Writing Code
+---
+## Don't Just Start Coding...
+There are three parts to writing code:
+
+1. Managing it
+2. Documenting it
+3. Writing it
+
+Notice that writing comes *last*.
+
+---
+
+## Managing Code
+
+> Why can't we write code the same way that we write an essay?
+
+---
+Layout: Split
+### Git
+![](./img/Git.png)
++++
+Version control allows us to:
+
+1. Track changes to files with a high level of detail using `commit`.
+2. `push` these changes out so that they are shared with others.
+3. `pull` down made by others down to our own computers.
+4. `merge` and resolve conflicting changes.
+5. Create and delete a `tag` as 'milestones' are reached.
+6. Create and merge a `branch` as 'features' are added/removed.
+7. Retrieve particular versions or branches using a `checkout`.
+
+---
+Layout: Split
+### GitHub
+![](./img/Octocat.png)
++++
+Git is distributed, meaning that every computer is a potential server *and* a potential authority. **Result**: commits on a plane!
+
+But how do people find and access your code if your 'server' is a home machine that goes to sleep at night? **Result**: GitHub.
+
+GitHub is 'just' a very large Git server with a *lot* of nice web-friendly features tacked on: create a web site, issue/bug tracking, promote your project... 
+
+---
+### Git+GitHub is for... anything!
+
+![](./img/i2p.png)
+
+^ This whole course (minus videos and assessments) is on GitHub.
+
+---
+Layout: SectionTitle
+## Documenting Code
+
+There is a lot more to documenting your code than just adding comments.
+
+---
+Layout: Split
+![left 50% filtered](./img/Markdown.png)
++++
+Markdown is intended to:
+
+- Make it easy to write and format text (headings, tables, **bold**, *italics*...).
+- Make it easy to embed rich media (video, images).
+- Make it easy to take this simply-formatted text and turn it into something *useful* (a web site, journal article, documentation...).
+---
+For those who know how to do it, you can also insert bits of real HTML and CSS (the 'languages' of web sites) as well.
+
+<div style="border: dotted 2px red; padding: 25px; margin-top: 25px; background-color: rgb(230,230,230)">This content has HTML formatting attached.</div>
+
+---
+### Why Use It?
+
+Together features that make it easy to use have *real* advantages for *you*:
+
+1. You will spend less time wrestling with Microsoft Word and its formatting; this means that...
+2. You will spend more time focussing on the important stuff: writing and coding!
+3. You will be able to combine Code and Documentation easily because Python/R and Markdown all coexist happily on GitHub.
+4. In R (Python is slightly tricker here) you can combine Markdown text with R code using something called `knitr` to 'compile' an article or essay; your code, your output, and your analysis are *always* in one place.
+
+---
+### Markdown Examples
+
+See [GitHub](https://github.com/jreades/i2p/blob/master/lectures/1.3-Writing_Code.md#markdown-examples):
+
+<table style="border: solid 1px rgb(230,230,230)">
+  <tr>
+    <th>Format</th><th>Output</th>
+  </tr><tr>
+    <td>Plain text...</td><td>Plain text</td>
+	</tr><tr>
+  	<td>## A Large Heading</td><td><h2>A Large Heading</h2></td>
+  </tr><tr>
+  	<td>### A Medium Heading</td><td><h3>A Medium Heading</h3></td>
+  </tr><tr>
+  	<td>- A list<br />- More list</td><td><ul>
+  		<li>A list</li>
+  		<li>More list</li>
+  	</ul></td>
+  </tr><tr>
+  	<td>1. An ordered list<br />2. More ordered list</td>
+  	<td><ol>
+      <li>An ordered list</li>
+      <li>More ordered list</li>
+      </ol></td>
+  </tr><tr>
+  	<td>[A link](http://casa.ucl.ac.uk)</td><td><a href="http://casa.ucl.ac.uk">A link</a></td>
+  </tr>
+</table>
+---
+<table style="border: solid 1px rgb(230,230,230)">
+  <tr>
+    <th>Format</th><th>Output</th>
+  </tr><tr>
+  	<td>![Alt Text](https://github.com/jreades/i2p/-raw/master/img/casa_logo.jpg)</td><td><img src="https://github.com/jreades/i2p/raw/master/img/casa_logo.jpg" width="150" /></td>
+  </tr><tr>
+  	<td>`A code snippet`</td><td><tt>A code snippet</tt></td>
+  </tr><tr>
+  	<td>```<br />
+  	A block of Python code<br />
+    ```
+  	</td><td>
+  Code would go here...
+  	</td>
+  </tr>
+</table>
+---
+
+### More Markdown...
+
+Here are some more resources:
+
+- [Getting Started](https://www.markdownguide.org/getting-started/)
+- [An online interactive tutorial](https://www.markdowntutorial.com)
+- [Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+And once you're ready to get 'serious', check out [this tutorial](https://programminghistorian.org/en/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown) on *Sustainable Authorship in Plain Text using Pandoc and Markdown* from [The Programming  Historian](https://programminghistorian.org/en/lessons/)!
+
+---
+
+### Markdown is for... anything!
+
+This whole course, [including this presentation](https://github.com/jreades/i2p/blob/master/lectures/1.3-Writing_Code.md) was writting in Markdown.
+
+---
+
+## Writing & Running Code
+
+> In an ideal world, we would say what we wanted the computer to do and it would do it. More frequently, we rush off with some half-formed thoughts, write some code that kind of does what we want, and then can't recall why wanted that in the first place. This has... consequences:
+
+<div style="border: dotted 2px red; padding: 10px; text-weight: stronger"><em>Not a joke:</em> I have been known to delete poorly-commented and documented code on the basis that it was 'inefficient' or 'unnecessary'... Results have included (briefly) taking down a corporate web site.</div>
+
+^ *Note:* I do not mean Siri here.
+
+^ *Also:* thank god for version control (even if was, then, only [CVS](https://www.gnu.org/software/trans-coord/manual/cvs/cvs.html)).
+
+---
+
+### Literate Programming
+
+Ideally, we want to write code in ways that are '[literate](https://en.wikipedia.org/wiki/Literate_programming)'. 
+
+> The best programs are written so that computing machines can perform them quickly and so that human beings can understand them clearly. A programmer is ideally an essayist who works with traditional aesthetic and literary forms as well as mathematical concepts, to communicate the way that an algorithm works and to convince a reader that the results will be correct.
+>
+> -- <cite>Donald Knuth, *[Selected Papers on Computer Science](https://www.goodreads.com/work/quotes/108081)*</cite>
+
+---
+
+### Key Tenets
+
+What we want:
+
+1. **Weaving**: the code and its documentation are together in one file.
+2. **Tangling**: the code can be run directly from this file.
+
+Why do we want this?
+
+---
+
+### Jupyter(Lab) & Notebooks
+
+![inline 100%](./img/Jupyter_and_Lab.png)
+
+Modern Browser + Jupyter == Tangled, Woven code in (m)any languages
+
+^ *Note*: you can set equations in Markdown too!
+
+---
+
+### JupyterLab + Python
+
+![fit](./img/lab/Lab-Notebook-3.png)
+
+---
+Layout: HeaderAndColumns
+### All Kinds of Features
+
+JupyterLab is basically a web application and, as such, has all kinds of features:
+
++++
+![inline fit](./img/lab/Lab-Interface.png)
++++
+![inline fit](./img/lab/Lab-Extensions.png)
++++
+![inline fit](./img/lab/Notebook-Structure.png)
+
+---
+### JupyterLab Uses Markdown
+
+![inline fit](./img/lab/Markdown-Formatted.png)
+
+![inline fit](./img/lab/Markdown-Raw.png)
+
+---
+
+### Tie These Together...
+
+![inline fit](./img/lab/Lab-Notebook-5.png)
+
+---
+
+## Recap
+
+1. With **Git + GitHub** we have a way to 'version' text, code, images, etc. and distribute them online via both a browser and the command line.
+2. With **Markdown** we have a way to easily produce content (essays, documentation, web sites, presentations) and convert or distribute it via both a browser and the commenad line.
+3. With JupyterLab we have a way to write code and documentation in 
